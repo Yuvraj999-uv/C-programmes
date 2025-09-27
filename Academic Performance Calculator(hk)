@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+int a,b,c,d,e;
+ float x,y;
+ scanf("%d%d%d%d%d",&a,&b,&c,&d,&e);
+    x=(a+b+c+d+e)/5;
+    y=((a+b+c+d+e)*100)/500;
+    printf("%d %.2f %.2f", a+b+c+d+e,x,y);
+ 
+    return 0;
+}
