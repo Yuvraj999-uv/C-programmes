@@ -1,0 +1,13 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+float x,y,z,si;
+    scanf("%f%f%f",&x,&y,&z);
+    si= (x*y*z)/100;
+        printf("%.2f",si);
+
+    return 0;
+}
