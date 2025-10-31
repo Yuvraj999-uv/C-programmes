@@ -1,0 +1,15 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+   int x,i,table;
+    scanf("%d",&x);
+    for(i=1;i<=10;i++){
+        table= x*i;
+        printf("%d x %d = %d\n",x,i,table);
+    }
+   
+    return 0;
+}
