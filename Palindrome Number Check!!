@@ -1,0 +1,31 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+     int x,y,z,num=0;
+    
+    scanf("%d",&x);
+    z=x;
+    if(x>=0&&x<=9){
+        printf("Palindrome");
+    }
+    else{
+    while(x!=0){
+         y=x%10;
+         x=x/10;
+         num=num*10+y;}
+       
+    if(num==z){
+        printf("Palindrome");
+    }
+    else{
+         printf("Not Palindrome");
+    }
+    
+    }
+        
+         
+    return 0;
+}
