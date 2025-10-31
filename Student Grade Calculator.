@@ -1,0 +1,29 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+   int a,b,c,d,e;
+ float y;
+ scanf("%d%d%d%d%d",&a,&b,&c,&d,&e);
+    y=((a+b+c+d+e)*100.0)/500;
+    printf("Percentage = %.2f\n",y);
+ if(y>=90){
+     printf("Grade = A");}
+   else  if(y>=80&&y<90){
+     printf("Grade = B");}
+   else  if(y>=70&&y<80){
+     printf("Grade = C");}
+   else  if(y>=60&&y<70){
+     printf("Grade = D");}
+   else  if(y>=40&&y<60){
+     printf("Grade = E");}
+     else if(y<40){
+     printf("Grade = F");}
+     
+ 
+
+    
+    return 0;
+}
