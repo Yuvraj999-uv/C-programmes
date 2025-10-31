@@ -1,0 +1,26 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+     float x,amount;
+    scanf("%f",&x);
+    if(x<=50){
+        amount= 0.50*x+ 0.2*(0.50*x);
+            printf("%.2f",amount);
+    }
+      else if(x<=150){
+        amount=30+ 0.75*(x-50)+ 0.2*(0.75*(x-50));
+            printf("%.2f",amount);
+    }
+         else if(x<=250){
+        amount= 120+1.20*(x-150)+ 0.2*(1.20*(x-150));
+            printf("%.2f",amount);
+    }
+      else  if(x>250){
+        amount=264+1.50*(x-250)+ 0.2*(1.50*(x-250));
+            printf("%.2f",amount);
+    }
+    return 0;
+}
