@@ -1,0 +1,23 @@
+#include <stdio.h>
+#include <string.h>
+#include <math.h>
+#include <stdlib.h>
+
+int main() {
+    int x,y,i=1,hcf=0 ;
+    scanf("%d %d",&x,&y);
+    if(x==0){
+        printf("0");}
+    while(i<=x){
+          if(x%i==0&&y%i==0){
+              hcf=i;
+          }
+    i++;
+       
+    }
+   printf("%d",hcf);
+    
+    
+
+    return 0;
+}
