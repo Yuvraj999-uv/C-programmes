@@ -1,0 +1,206 @@
+#include<stdio.h>
+#include<stdlib.h>
+#define max 100
+int list[max];
+int n=0;
+void insertinbeg(int value){
+    if(n==max){
+    printf("List Is Full !!\n!");
+    return;
+}
+    for(int i=n-1;i>=0;i--){
+    list[i+1]=list[i];
+}
+    list[0]=value;
+    n++;
+    printf("Element inserted !!\n ");
+}
+    void insertedinend(int value){
+        if(n==max){
+            printf("List is Full!!!");
+            return;
+        }
+        list[n++]=value;
+        printf("ELement Inserted!!!\n");
+    }
+    void insertedatposition(int pos,int value){
+        if(n==max){
+            printf("List is Full!!!");
+            return;
+        }
+        else if(pos<0||pos>n){
+         printf("Invalid Position !!!\n");}
+         else{
+            for (int i =n-1; i >= pos; i--)
+            {
+                list[i+1]=list[i]; 
+            }
+            list[pos] = value;
+            n++;
+             printf("ELement Inserted!!!\n");
+
+            
+         }
+         
+
+    }
+    void deletefrombeg(){
+         if(n==0){
+         printf("List is Empty !!!\n");
+         return;
+        }
+        else{
+            for (int i = 0; i < n; i++)
+            {
+               list[i]=list[i+1]; //left shifting
+            }
+            n--;
+            printf("ELement Deleted!!!\n");
+
+        }
+    }
+    void deletefromend(){
+        if(n==0){
+         printf("List is Empty !!!\n");
+         return;
+        }
+        n--;
+        printf("ELement Deleted!!!\n");
+    }
+    void deleteatposition(int pos){
+        if(n==0){
+         printf("List is Empty !!!\n");
+         return;
+        }
+        else if(pos<0||pos>=n){
+         printf("Invalid Position !!!\n");
+        }
+        else{
+            for (int i = pos; i < n-1; i++)
+            {
+                list[i]=list[i+1];
+            }
+            n--;
+            printf("ELement Deleted!!!\n");
+        }
+
+    }
+    int searchelement(int value){ //linear search
+        for (int i = 0; i < n; i++)
+        {
+           if(list[i] == value){
+           return i;}
+        }
+        return -1;
+    }
+
+    void displaylist(){
+        if(n==0){
+         printf("List is Empty !!!\n");
+        }
+        for (int i = 0; i < n; i++)
+        {
+            printf("%d\t",list[i]);
+        }
+        printf("\n");    
+    }
+    void updateList(int pos,int value){
+        if(n==0){
+         printf("List is Empty !!!\n");
+         return;
+        }
+        else if(pos<0||pos>=n){
+         printf("Invalid Position !!!\n");}
+         else{
+            list[pos]= value;
+            printf("Element Updated !!!\n");
+         }
+    }
+    void bubblesort(){
+        for (int i = 0; i < n-1; i++)
+        {
+            for(int j=0;j<n-i-1;j++){
+                if(list[j]> list[j+1]){
+                    int temp= list[j];
+                    list[j]=list[j+1];
+                     list[j+1]= temp;
+                }
+            }
+        
+    }}
+    int main(){
+        while(1){
+            printf("1.Insert in Beginning\n");
+            printf("2.Insert in end\n");
+            printf("3.Insert in any position\n");
+            printf("4.delete in beginning\n");
+            printf("5.delete in end\n");
+            printf("6.delete in specified position\n");
+            printf("7.display list\n");
+            printf("8.search element\n");
+            printf("9.update\n");
+            printf("10.sort\n");
+            int choice,data,pos;
+            printf("Enter Choice: ");
+            scanf("%d",&choice);
+            switch(choice){
+                case 1:
+                printf("Enter Data:");
+                scanf("%d",&data);
+                insertedinend(data);
+                break;
+                case 2:
+                printf("Enter Data:");
+                scanf("%d",&data);
+                insertinbeg(data);
+                break;
+                case 3:
+                printf("Enter Data:");
+                scanf("%d",&data);
+                printf("Enter Position: ");
+                scanf("%d",&pos);
+                insertedatposition(pos,data);
+                break;
+                case 4:
+               deletefrombeg();
+                break;
+                case 5:
+                deletefromend();
+                break;
+                case 6:
+                printf("Enter Position: ");
+                scanf("%d",&pos);
+                deleteatposition(pos);
+                break;
+                case 7:
+                displaylist();
+                break;
+                case 8:
+                printf("Enter Searching Element:");
+                scanf("%d",&data);
+                int index =searchelement(data);
+                if(index !=-1)
+                printf("Element not found at index %d\n",index);
+                else
+                 printf("Element not found !!!\n");
+                break;
+                case 9:
+                printf("Enter Position:");
+                scanf("%d",&pos);
+                printf("Enter Data:");
+                scanf("%d",&data);
+                updateList(pos,data);
+                break;
+                case 10:
+               bubblesort();
+                break;
+                case 11:
+               exit(0);
+                break;
+                default:
+                printf("Invalid choice");
+            }
+            printf("\n\n");
+        }
+        return(0);
+    }
